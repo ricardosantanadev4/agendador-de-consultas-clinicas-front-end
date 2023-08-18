@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Paciente } from '../../model/paciente';
+import { PacienteService } from '../../services/paciente.service';
 
 @Component({
   selector: 'app-consultas-list',
@@ -7,10 +8,11 @@ import { Paciente } from '../../model/paciente';
   styleUrls: ['./consultas-list.component.scss']
 })
 export class ConsultasListComponent {
-  dataSource: Paciente[] = [{
-    name: 'Ricardo', rg: '7777777', telefone: '9999999999',
-    dataNascimento: '11/11/1111', consulta: '1'
-  }];
+  dataSource: Paciente[] = [];
 
   displayedColumns = ['name', 'rg', 'telefone', 'dataNascimento', 'consulta'];
+  constructor(pacienteService: PacienteService) {
+    this.dataSource = pacienteService.dataSource;
+  }
+
 }
