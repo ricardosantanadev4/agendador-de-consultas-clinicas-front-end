@@ -12,10 +12,14 @@ export class PacienteService {
   //   dataNascimento: '11/11/1111', consulta: '1'
   // }];
 
-  private readonly API = 'http://localhost:3000/paciente';
+  // utilizado no incio para testar a table usando o HttpClient e json-server
+  // private readonly API = 'http://localhost:3000/paciente';
+
+  private readonly API = '/api/paciente';
+
   constructor(private http: HttpClient) { }
 
-  getConsultas(){
+  getConsultas() {
     return this.http.get<Paciente[]>(this.API);
   }
 }

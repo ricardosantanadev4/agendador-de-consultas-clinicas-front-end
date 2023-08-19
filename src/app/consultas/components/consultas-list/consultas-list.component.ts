@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Consulta } from '../../model/consulta';
 import { Paciente } from '../../model/paciente';
 import { PacienteService } from '../../services/paciente.service';
 
@@ -10,14 +10,16 @@ import { PacienteService } from '../../services/paciente.service';
 })
 export class ConsultasListComponent {
   dataSource: Paciente[] = [];
+  // dataSource!: Observable<Paciente[]>;
+
   displayedColumns = ['name', 'rg', 'telefone', 'dataNascimento', 'consulta'];
 
   constructor(pacienteService: PacienteService) {
     // this.dataSource = pacienteService.dataSource;
-    pacienteService.getConsultas().subscribe(c => this.dataSource = c);
-  }  
+    pacienteService.getConsultas().subscribe(paciente => { this.dataSource = paciente, paciente.map(p => { console.log(p.consulta) }) });
+  }
 
-  // getConsulta(pacienteService: PacienteService){
-  //   this.dataSource = pacienteService.getConsultas();
+  // consultaID(c: Consulta[]) {
+  //   return c.forEach(c => c.id);
   // }
 }

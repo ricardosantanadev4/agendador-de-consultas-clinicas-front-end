@@ -1,7 +1,10 @@
+import { Consulta } from "./consulta";
+
 export interface Paciente {
-    name: String;
-    rg: String;
-    telefone: String;
-    dataNascimento: String;
-    consulta: String;
+    id: string,
+    name: string,
+    rg: string,
+    telefone: string,
+    dataNascimento: string,
+    consulta: Consulta[]
 }
