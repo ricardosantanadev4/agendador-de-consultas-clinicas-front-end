@@ -17,7 +17,7 @@ export class ConsultasListComponent {
     pacienteService.getConsultas().subscribe(c => this.dataSource = c);
   }  
 
-  getConsulta(pacienteService: PacienteService){
-    this.dataSource = pacienteService.getConsultas();
-  }
+  // getConsulta(pacienteService: PacienteService){
+  //   this.dataSource = pacienteService.getConsultas();
+  // }
 }
