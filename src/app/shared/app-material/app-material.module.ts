@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import {MatCardModule} from '@angular/material/card';
 import {MatTableModule} from '@angular/material/table';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [],
@@ -10,12 +11,14 @@ import {MatTableModule} from '@angular/material/table';
     CommonModule,
     MatToolbarModule,
     MatCardModule,
-    MatTableModule
+    MatTableModule,
+    HttpClientModule
   ],
   exports: [
     MatToolbarModule,
     MatCardModule,
-    MatTableModule
+    MatTableModule,
+    HttpClientModule
   ]
 })
 export class AppMaterialModule { }
