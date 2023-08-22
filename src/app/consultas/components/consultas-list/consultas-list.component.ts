@@ -20,7 +20,7 @@ export class ConsultasListComponent {
       tap(p => console.log(p)));
   }
 
-  // feito para exibir o id da na conluna consulta na tabela do angular
+  // metodo criado para exibir o id da na conluna consulta na tabela do angular
   // com isso e necessario percorrer o array para extrair e retornar essa informacao
   // contudo nao e a melhor forma porque o id e sobrescrito na variavel e retorna so um id, 
   // porem o paciente pode ter varias consultas ou seja mais de um id deveria serexibido
