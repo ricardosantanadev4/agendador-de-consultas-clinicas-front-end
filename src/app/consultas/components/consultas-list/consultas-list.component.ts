@@ -1,8 +1,7 @@
-import { Component } from '@angular/core';
-import { first, Observable, tap } from 'rxjs';
+import { Component, Input } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Consulta } from '../../model/consulta';
 import { Paciente } from '../../model/paciente';
-import { PacienteService } from '../../services/paciente.service';
 
 @Component({
   selector: 'app-consultas-list',
@@ -10,24 +9,22 @@ import { PacienteService } from '../../services/paciente.service';
   styleUrls: ['./consultas-list.component.scss']
 })
 export class ConsultasListComponent {
-  // dataSource: Paciente[] = [];
-  dataSource: Observable<Paciente[]>;
+  @Input() pacienteList!: Observable<Paciente[]>;
 
-  displayedColumns = ['name', 'rg', 'telefone', 'dataNascimento', 'consulta'];
+  readonly displayedColumns = ['name', 'rg', 'telefone', 'dataNascimento', 'consulta'];
 
-  constructor(pacienteService: PacienteService) {
-    this.dataSource = pacienteService.getConsultas().pipe(
-      tap(p => console.log(p)));
+  constructor() {
+
   }
 
-  // metodo criado para exibir o id da consulta na conluna consulta na tabela do angular
+  // metodo de teste criado para exibir o id de todas as consultas de cada paciente na coluna consulta da tabela do angular
   // com isso e necessario percorrer o array de consultas para extrair e retornar essa informacao
-  // contudo nao e a melhor forma porque o id e sobrescrito na variavel e retorna so um id, 
-  // porem o paciente pode ter varias consultas ou seja mais de um id deveria serexibido
+  // para a tabela do angular renderizar o array e necesario criar um array com o mesmo tipo do dado a ser exibido
+  // o id da consulta e do tipo string logo c.id retorna um dado tipo string por isso cs: String[]
   consultaID(c: Consulta[]) {
-    // dessa forma o id da consulta e exibido na tabela, porem o id e sobrescrito e mostra somente um
-    let cs = '';
-    c.forEach(c => { cs = c.id, console.log(c.id) });
+    let cs: String[] = [];
+    c.forEach(c => { cs.push(c.id) });
+    console.log(cs);
     return cs;
 
     // a tabela nao entede esse tipo de return por isso nao renderiza o valor na tabela
