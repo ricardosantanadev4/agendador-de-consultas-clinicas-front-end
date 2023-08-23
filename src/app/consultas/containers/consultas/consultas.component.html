@@ -3,7 +3,8 @@
         <mat-toolbar color="primary">
             <span>Consulta</span>
         </mat-toolbar>
-        <app-consultas-list [pacienteList]="pacientes$">
+        <app-consultas-list *ngIf="pacientes$ | async as pacientes" 
+        [pacienteList]="pacientes" >
         </app-consultas-list>
     </mat-card-content>
 </mat-card>

@@ -9,12 +9,12 @@ import { PacienteService } from '../../services/paciente.service';
   styleUrls: ['./consultas.component.scss']
 })
 export class ConsultasComponent {
-// dataSource: Paciente[] = [];
-pacientes$: Observable<Paciente[]>;
+  // dataSource: Paciente[] = [];
+  pacientes$: Observable<Paciente[]>;
 
-constructor(pacienteService: PacienteService) {
-  this.pacientes$ = pacienteService.getConsultas().pipe(
-    tap(p => console.log(p)));
-}
+  constructor(pacienteService: PacienteService) {
+    this.pacientes$ = pacienteService.getConsultas().pipe(
+      tap(p => console.log(p)));
+  }
 
 }
