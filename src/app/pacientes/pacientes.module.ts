@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { ConsultaRoutingModule } from './consultas-routing.module';
-import { ConsultasComponent } from './containers/consultas/consultas.component';
+import { ConsultaRoutingModule } from './pacientes-routing.module';
+import { PacientesComponent } from './containers/pacientes/pacientes.component';
 import { AppMaterialModule } from '../shared/app-material/app-material.module';
 import { ConsultasListComponent } from './components/consultas-list/consultas-list.component';
 
 
 @NgModule({
   declarations: [
-    ConsultasComponent,
+    PacientesComponent,
     ConsultasListComponent
   ],
   imports: [
@@ -18,4 +18,4 @@ import { ConsultasListComponent } from './components/consultas-list/consultas-li
     AppMaterialModule
   ]
 })
-export class ConsultasModule { }
+export class PacientesModule { }

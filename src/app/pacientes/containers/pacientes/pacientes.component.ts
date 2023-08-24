@@ -5,10 +5,10 @@ import { PacienteService } from '../../services/paciente.service';
 
 @Component({
   selector: 'app-consultas',
-  templateUrl: './consultas.component.html',
-  styleUrls: ['./consultas.component.scss']
+  templateUrl: './pacientes.component.html',
+  styleUrls: ['./pacientes.component.scss']
 })
-export class ConsultasComponent {
+export class PacientesComponent {
   // dataSource: Paciente[] = [];
   pacientes$: Observable<Paciente[]>;
 
