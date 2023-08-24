@@ -1,6 +1,4 @@
-import { CssSelector } from '@angular/compiler';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Consulta } from '../../model/consulta';
 import { Paciente } from '../../model/paciente';
 
 @Component({
@@ -18,7 +16,7 @@ export class ConsultasListComponent {
 
   // metodo de teste criado para exibir o id das consultas na tabela do Angular
   // observacoes: o .map() foi a melhor opcao porque tem retorno e a tabela pode rederizar os dados
-  // ale disso foi tulizada menas linhas de codigo para retornar o id das consultas usando o .map() 
+  // ale disso foram utlizadas menas linhas de codigo para retornar o id das consultas usando o .map() 
   consultaId(paciente: Paciente) {
 
     // .map retorna um valor por isso a tabela renderiza os dados 
