@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { first } from 'rxjs';
 import { Paciente } from '../model/paciente';
 
 @Injectable({
@@ -20,6 +21,7 @@ export class PacienteService {
   constructor(private http: HttpClient) { }
 
   getConsultas() {
-    return this.http.get<Paciente[]>(this.API);
+    return this.http.get<Paciente[]>(this.API).pipe(
+    );
   }
 }

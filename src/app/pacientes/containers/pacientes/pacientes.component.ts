@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Observable, tap } from 'rxjs';
+import { first, Observable, tap } from 'rxjs';
 import { Paciente } from '../../model/paciente';
 import { PacienteService } from '../../services/paciente.service';
 
@@ -14,7 +14,8 @@ export class PacientesComponent {
 
   constructor(pacienteService: PacienteService) {
     this.pacientes$ = pacienteService.getConsultas().pipe(
-      tap(p => console.log(p)));
+      tap(console.log)
+    );
   }
 
 }
