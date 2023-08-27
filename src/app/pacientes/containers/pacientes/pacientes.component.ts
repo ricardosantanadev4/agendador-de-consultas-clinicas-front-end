@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { first, Observable, tap } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 import { Paciente } from '../../model/paciente';
 import { PacienteService } from '../../services/paciente.service';
 
