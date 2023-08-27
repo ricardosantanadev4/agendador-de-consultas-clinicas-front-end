@@ -3,9 +3,9 @@ import { Consulta } from '../../model/consulta';
 import { Paciente } from '../../model/paciente';
 
 @Component({
-  selector: 'app-consultas-list',
-  templateUrl: './consultas-list.component.html',
-  styleUrls: ['./consultas-list.component.scss']
+  selector: 'app-pacientes-list',
+  templateUrl: './pacientes-list.component.html',
+  styleUrls: ['./pacientes-list.component.scss']
 })
 export class ConsultasListComponent {
   @Input() pacienteList: Paciente[] = [];
