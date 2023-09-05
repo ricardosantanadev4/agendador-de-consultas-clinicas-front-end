@@ -1,41 +1,58 @@
-<table mat-table [dataSource]="pacienteList" class="mat-elevation-z8">
+<mat-table [dataSource]="pacienteList" class="mat-elevation-z8">
 
   <!-- Position Column -->
   <ng-container matColumnDef="position">
-    <th mat-header-cell *matHeaderCellDef> No. </th>
-    <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+    <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.position}} </mat-cell>
   </ng-container>
 
   <!-- Name Column -->
   <ng-container matColumnDef="name">
-    <th mat-header-cell *matHeaderCellDef> Nome </th>
-    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    <mat-header-cell *matHeaderCellDef> Nome </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
   </ng-container>
 
   <!-- Weight Column -->
   <ng-container matColumnDef="rg">
-    <th mat-header-cell *matHeaderCellDef> RG </th>
-    <td mat-cell *matCellDef="let element"> {{element.rg}} </td>
+    <mat-header-cell *matHeaderCellDef> RG </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.rg}} </mat-cell>
   </ng-container>
 
   <!-- Symbol Column -->
   <ng-container matColumnDef="telefone">
-    <th mat-header-cell *matHeaderCellDef> Telefone </th>
-    <td mat-cell *matCellDef="let element"> {{element.telefone}} </td>
+    <mat-header-cell *matHeaderCellDef> Telefone </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.telefone}} </mat-cell>
   </ng-container>
 
   <!-- Symbol Column -->
   <ng-container matColumnDef="dataNascimento">
-    <th mat-header-cell *matHeaderCellDef> Data De Nascimento </th>
-    <td mat-cell *matCellDef="let element"> {{element.dataNascimento}} </td>
+    <mat-header-cell *matHeaderCellDef> Data De Nascimento </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.dataNascimento}} </mat-cell>
   </ng-container>
 
   <!-- Symbol Column -->
   <ng-container matColumnDef="consulta">
-    <th mat-header-cell *matHeaderCellDef> Cód.Consulta </th>
-    <td mat-cell *matCellDef="let element"> {{element.consulta | consultaid}} </td>
+    <mat-header-cell *matHeaderCellDef> Cód.Consulta </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.consulta | consultaid}} </mat-cell>
+  </ng-container>
+
+  <!-- Actions Column -->
+  <ng-container matColumnDef="actions">
+    <mat-header-cell *matHeaderCellDef>
+      <button mat-mini-fab color="primary" aria-label="Adicionar consultas">
+        <mat-icon>add</mat-icon>
+      </button>
+    </mat-header-cell>
+    <mat-cell *matCellDef="let element">
+      <button mat-icon-button color="primary" aria-label="Editar consultas">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-icon-button color="warn" aria-label="Deletar consultas">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </mat-cell>
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-</table>
+</mat-table>

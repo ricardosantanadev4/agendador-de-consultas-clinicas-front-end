@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Consulta } from '../../model/consulta';
 import { Paciente } from '../../model/paciente';
 
 @Component({
@@ -11,7 +10,7 @@ export class ConsultasListComponent {
   @Input() pacienteList: Paciente[] = [];
   @Output() pacienteListEvent = new EventEmitter(false);
 
-  readonly displayedColumns = ['name', 'rg', 'telefone', 'dataNascimento', 'consulta'];
+  readonly displayedColumns = ['name', 'rg', 'telefone', 'dataNascimento', 'consulta', 'actions'];
 
   constructor() { }
 
