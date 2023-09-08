@@ -3,7 +3,7 @@
         <mat-toolbar color="primary">
             <span>Consulta</span>
         </mat-toolbar>
-        <div class="mat-elevation-z8">
+        <div class="column-flex mat-elevation-z8">
             <app-pacientes-list *ngIf="pacientes$ | async as pacientes ; else elseBlock" [pacienteList]="pacientes">
             </app-pacientes-list>
             <ng-template #elseBlock>
