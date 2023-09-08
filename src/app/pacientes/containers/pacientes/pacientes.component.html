@@ -3,12 +3,14 @@
         <mat-toolbar color="primary">
             <span>Consulta</span>
         </mat-toolbar>
-        <app-pacientes-list *ngIf="pacientes$ | async as pacientes ; else elseBlock" [pacienteList]="pacientes">
-        </app-pacientes-list>
-        <ng-template #elseBlock>
-            <div class="loading-spinner">
-                <mat-spinner></mat-spinner>
-            </div>
-        </ng-template>
+        <div class="mat-elevation-z8">
+            <app-pacientes-list *ngIf="pacientes$ | async as pacientes ; else elseBlock" [pacienteList]="pacientes">
+            </app-pacientes-list>
+            <ng-template #elseBlock>
+                <div class="loading-spinner">
+                    <mat-spinner></mat-spinner>
+                </div>
+            </ng-template>
+        </div>
     </mat-card-content>
 </mat-card>
