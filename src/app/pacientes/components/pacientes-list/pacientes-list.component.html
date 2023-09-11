@@ -12,25 +12,25 @@
     <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
   </ng-container>
 
-  <!-- Weight Column -->
+  <!-- rg Column -->
   <ng-container matColumnDef="rg">
     <mat-header-cell *matHeaderCellDef> RG </mat-header-cell>
     <mat-cell *matCellDef="let element"> {{element.rg}} </mat-cell>
   </ng-container>
 
-  <!-- Symbol Column -->
+  <!-- telefone Column -->
   <ng-container matColumnDef="telefone">
     <mat-header-cell *matHeaderCellDef> Telefone </mat-header-cell>
     <mat-cell *matCellDef="let element"> {{element.telefone}} </mat-cell>
   </ng-container>
 
-  <!-- Symbol Column -->
+  <!-- dataNascimento Column -->
   <ng-container matColumnDef="dataNascimento">
     <mat-header-cell *matHeaderCellDef> Data De Nascimento </mat-header-cell>
     <mat-cell *matCellDef="let element"> {{element.dataNascimento}} </mat-cell>
   </ng-container>
 
-  <!-- Symbol Column -->
+  <!-- consulta Column -->
   <ng-container matColumnDef="consulta">
     <mat-header-cell *matHeaderCellDef> Cód.Consulta </mat-header-cell>
     <mat-cell *matCellDef="let element"> {{element.consulta | consultaid}} </mat-cell>
@@ -39,15 +39,15 @@
   <!-- Actions Column -->
   <ng-container matColumnDef="actions">
     <mat-header-cell *matHeaderCellDef class="action-column-header">
-      <button mat-mini-fab color="primary" aria-label="Adicionar consultas">
+      <button mat-mini-fab color="primary" aria-label="Adicionar consultas" (click)="onAdd()">
         <mat-icon>add</mat-icon>
       </button>
     </mat-header-cell>
     <mat-cell *matCellDef="let element" class="action-column">
-      <button mat-icon-button color="primary" aria-label="Editar consultas">
+      <button mat-icon-button color="primary" aria-label="Editar consultas" (click)="onEdit()">
         <mat-icon>edit</mat-icon>
       </button>
-      <button mat-icon-button color="warn" aria-label="Deletar consultas">
+      <button mat-icon-button color="warn" aria-label="Deletar consultas" (click)="onDelete()">
         <mat-icon>delete</mat-icon>
       </button>
     </mat-cell>

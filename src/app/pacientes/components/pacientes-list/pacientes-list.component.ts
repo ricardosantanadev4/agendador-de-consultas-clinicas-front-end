@@ -14,4 +14,15 @@ export class ConsultasListComponent {
 
   constructor() { }
 
+  onAdd() {
+    console.log('onAdd()');
+  }
+
+  onEdit() {
+    console.log('onEdit()');
+  }
+
+  onDelete() {
+    console.log('onDelete()');
+  }
 }
