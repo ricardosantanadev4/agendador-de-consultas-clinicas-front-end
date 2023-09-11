@@ -39,15 +39,15 @@
   <!-- Actions Column -->
   <ng-container matColumnDef="actions">
     <mat-header-cell *matHeaderCellDef class="action-column-header">
-      <button mat-mini-fab color="primary" aria-label="Adicionar consultas" (click)="onAdd()">
+      <button mat-mini-fab color="primary" aria-label="Adicionar consultas" (click)="onAddPacientesList()">
         <mat-icon>add</mat-icon>
       </button>
     </mat-header-cell>
     <mat-cell *matCellDef="let element" class="action-column">
-      <button mat-icon-button color="primary" aria-label="Editar consultas" (click)="onEdit()">
+      <button mat-icon-button color="primary" aria-label="Editar consultas" (click)="onEditPacientesList()">
         <mat-icon>edit</mat-icon>
       </button>
-      <button mat-icon-button color="warn" aria-label="Deletar consultas" (click)="onDelete()">
+      <button mat-icon-button color="warn" aria-label="Deletar consultas" (click)="onDeletePacientesList()">
         <mat-icon>delete</mat-icon>
       </button>
     </mat-cell>

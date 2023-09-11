@@ -18,4 +18,19 @@ export class PacientesComponent {
     );
   }
 
+  onAddPacientes(event: boolean) {
+    console.log('onAddPacientes()');
+    console.log(event);
+  }
+
+  onEditPacientes(event: boolean) {
+    console.log('onEditPacientes()');
+    console.log(event);
+  }
+
+  onDeletePacientes(event: boolean) {
+    console.log('onDeletePacientes()');
+    console.log(event);
+  }
+
 }
