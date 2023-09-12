@@ -5,7 +5,7 @@
         </mat-toolbar>
         <div class="column-flex mat-elevation-z8">
             <app-pacientes-list *ngIf="pacientes$ | async as pacientes ; else elseBlock" [pacienteList]="pacientes"
-                (pacienteListEventOnAdd)="onAddPacientes($event)" (pacienteListEventOnEdit)="onEditPacientes($event)"
+                (pacienteListEventOnAdd)="onAddPacientes()" (pacienteListEventOnEdit)="onEditPacientes($event)"
                 (pacienteListEventOnDelete)="onDeletePacientes($event)">
             </app-pacientes-list>
             <ng-template #elseBlock>

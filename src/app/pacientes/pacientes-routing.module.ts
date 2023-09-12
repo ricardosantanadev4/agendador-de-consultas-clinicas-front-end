@@ -5,7 +5,8 @@ import { PacientesComponent } from './containers/pacientes/pacientes.component';
 
 const routes: Routes = [
   { path: '', component: PacientesComponent },
-  { path: 'new', component: PacientesFormComponent }
+  { path: 'new', component: PacientesFormComponent },
+  { path: 'edit/:id', component: PacientesFormComponent }
 ];
 
 @NgModule({

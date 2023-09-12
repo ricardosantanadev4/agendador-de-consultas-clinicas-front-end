@@ -19,20 +19,21 @@ export class PacientesComponent {
     );
   }
 
-  onAddPacientes(event: boolean) {
+  onAddPacientes() {
     console.log('onAddPacientes()');
-    console.log(event);
     this.router.navigate(['new'], { relativeTo: this.route });
   }
 
-  onEditPacientes(event: boolean) {
+  onEditPacientes(paciente: Paciente) {
     console.log('onEditPacientes()');
-    console.log(event);
+    console.log(paciente);
+    this.router.navigate(['edit', paciente.id], { relativeTo: this.route });
   }
 
-  onDeletePacientes(event: boolean) {
+  onDeletePacientes(paciente: Paciente) {
     console.log('onDeletePacientes()');
-    console.log(event);
+    console.log(paciente);
+
   }
 
 }

@@ -9,8 +9,8 @@ import { Paciente } from '../../model/paciente';
 export class ConsultasListComponent {
   @Input() pacienteList: Paciente[] = [];
   @Output() pacienteListEventOnAdd = new EventEmitter<boolean>(false);
-  @Output() pacienteListEventOnEdit = new EventEmitter<boolean>(false);
-  @Output() pacienteListEventOnDelete = new EventEmitter<boolean>(false);
+  @Output() pacienteListEventOnEdit = new EventEmitter<Paciente>(false);
+  @Output() pacienteListEventOnDelete = new EventEmitter<Paciente>(false);
 
   readonly displayedColumns = ['name', 'rg', 'telefone', 'dataNascimento', 'consulta', 'actions'];
 
@@ -21,13 +21,13 @@ export class ConsultasListComponent {
     this.pacienteListEventOnAdd.emit(true);
   }
 
-  onEditPacientesList() {
+  onEditPacientesList(record: Paciente) {
     console.log('onEditPacientesList()');
-    this.pacienteListEventOnEdit.emit(true);
+    this.pacienteListEventOnEdit.emit(record);
   }
 
-  onDeletePacientesList() {
+  onDeletePacientesList(record: Paciente) {
     console.log('onDeletePacientesList()');
-    this.pacienteListEventOnDelete.emit(true);
+    this.pacienteListEventOnDelete.emit(record);
   }
 }
