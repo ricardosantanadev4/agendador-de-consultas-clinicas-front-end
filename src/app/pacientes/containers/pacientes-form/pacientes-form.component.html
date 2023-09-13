@@ -1,1 +1,24 @@
-<p>pacientes-form works!</p>
+<mat-card>
+  <mat-card-content>
+    <mat-toolbar color="primary">
+      <span>Consulta</span>
+    </mat-toolbar>
+
+    <form>
+      <mat-form-field class="full-width">
+        <mat-label>Nome</mat-label>
+        <input matInput>
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <mat-label>Telefone</mat-label>
+        <input matInput placeholder="81999999999">
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button mat-raised-button color="primary">Salvar</button>
+    <button mat-raised-button>Cancelar</button>
+  </mat-card-actions>
+</mat-card>
