@@ -5,15 +5,60 @@
     </mat-toolbar>
 
     <form>
+      <!-- Form field do angular material -->
       <mat-form-field class="full-width">
         <mat-label>Nome</mat-label>
         <input matInput>
       </mat-form-field>
 
       <mat-form-field class="full-width">
-        <mat-label>Telefone</mat-label>
-        <input matInput placeholder="81999999999">
+        <mat-label>RG</mat-label>
+        <input matInput>
       </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <mat-label>Telefone</mat-label>
+        <input matInput>
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <mat-label>Data De Nascimento</mat-label>
+        <input matInput>
+      </mat-form-field>
+
+      <!-- Select -->
+      <mat-form-field appearance="fill">
+        <mat-label>Selecione uma especialidade:</mat-label>
+        <mat-select>
+          <mat-option value="Cardiologista">CARDIOLOGISTA</mat-option>
+          <mat-option value="Neurologista">NEUROLOGISTA</mat-option>
+          <mat-option value="Pediatra">PEDIATRA</mat-option>
+          <mat-option value="Crilinicogeral">CLINICOGERAL</mat-option>
+          <mat-option value="Ortepedista">ORTOPEDISTA</mat-option>
+        </mat-select>
+      </mat-form-field>
+      
+      <!-- Datepicker touch UI -->
+      <!-- alem de importar o MatDatepickerModule e necessario importar MatNativeDateModule ou 
+        MatMomentDateModule so lucao do erro no proprio OVERVIEW do DATEPICKER-->
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Selecione uma data disponível:</mat-label>
+        <input matInput [matDatepicker]="picker">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker touchUi #picker></mat-datepicker>
+      </mat-form-field>
+
+      <!-- Basic select -->
+      <mat-form-field appearance="fill">
+        <mat-label>Selecione um especialista:</mat-label>
+        <mat-select [(value)]="selectedFood">
+          <mat-option></mat-option>
+          <mat-option [value]="option.id" *ngFor="let option of foods">{{ option.name }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <p>You selected: {{selectedFood}}</p>
     </form>
   </mat-card-content>
 
