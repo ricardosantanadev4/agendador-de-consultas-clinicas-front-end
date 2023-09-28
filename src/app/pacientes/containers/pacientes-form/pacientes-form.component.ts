@@ -16,6 +16,13 @@ export class PacientesFormComponent {
     this.location.back();
   }
 
+  // Datepicker with filter validation
+  myFilter = (d: Date | null): boolean => {
+    const day = (d || new Date()).getDay();
+    // Prevent Saturday and Sunday from being selected.
+    return day !== 0 && day !== 6;
+  };
+
   foods: Especialista[] = [
     { id: '1', name: 'doutor 1 especialista', especialidade: 'CARDIOLOGISTA', dataDisponivel: '29/09/2023', horarioDisponivel: '16:00:00', status: 'DISPONIVEL' },
     { id: '2', name: 'doutor 2 especialista', especialidade: 'NEUROLOGISTA', dataDisponivel: '01/12/2023', horarioDisponivel: '14:00:00', status: 'INDISPONIVEL' },

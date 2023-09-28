@@ -41,9 +41,10 @@
       <!-- Datepicker touch UI -->
       <!-- alem de importar o MatDatepickerModule e necessario importar MatNativeDateModule ou 
         MatMomentDateModule so lucao do erro no proprio OVERVIEW do DATEPICKER-->
+        <!-- Datepicker with filter validation -->
       <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>Selecione uma data disponível:</mat-label>
-        <input matInput [matDatepicker]="picker">
+        <input matInput [matDatepickerFilter]="myFilter" [matDatepicker]="picker">
         <mat-hint>MM/DD/YYYY</mat-hint>
         <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker touchUi #picker></mat-datepicker>
