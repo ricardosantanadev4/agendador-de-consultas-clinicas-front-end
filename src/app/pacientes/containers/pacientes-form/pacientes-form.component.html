@@ -37,14 +37,15 @@
           <mat-option value="Ortepedista">ORTOPEDISTA</mat-option>
         </mat-select>
       </mat-form-field>
-      
+
       <!-- Datepicker touch UI -->
       <!-- alem de importar o MatDatepickerModule e necessario importar MatNativeDateModule ou 
         MatMomentDateModule so lucao do erro no proprio OVERVIEW do DATEPICKER-->
-        <!-- Datepicker with filter validation -->
+      <!-- Datepicker with min & max validation -->
+      <!-- Datepicker with custom formats -->
       <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>Selecione uma data disponível:</mat-label>
-        <input matInput [matDatepickerFilter]="myFilter" [matDatepicker]="picker">
+        <input matInput [min]="minDate" [max]=" maxDate" [matDatepicker]="picker" [formControl]="date">
         <mat-hint>MM/DD/YYYY</mat-hint>
         <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker touchUi #picker></mat-datepicker>

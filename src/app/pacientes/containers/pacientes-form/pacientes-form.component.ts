@@ -1,5 +1,7 @@
 import { Location } from '@angular/common';
 import { Component } from '@angular/core';
+import { FormControl } from '@angular/forms';
+import * as moment from 'moment';
 import { Especialista } from '../../model/food';
 
 @Component({
@@ -9,7 +11,13 @@ import { Especialista } from '../../model/food';
 })
 export class PacientesFormComponent {
 
-  constructor(private location: Location) { }
+  constructor(private location: Location) {
+    // Set the minimum to January 1st 20 years in the past and December 31st a year in the future.
+    // Datepicker with min & max validation
+    const currentYear = new Date().getFullYear();
+    this.minDate = new Date(currentYear - 10, 0, 1);
+    this.maxDate = new Date(currentYear + 1, 11, 31);
+  }
 
   onCancel() {
     console.log('buttonCancel()');
@@ -17,11 +25,18 @@ export class PacientesFormComponent {
   }
 
   // Datepicker with filter validation
-  myFilter = (d: Date | null): boolean => {
-    const day = (d || new Date()).getDay();
-    // Prevent Saturday and Sunday from being selected.
-    return day !== 0 && day !== 6;
-  };
+  // myFilter = (d: Date | null): boolean => {
+  //   const day = (d || new Date()).getDay();
+  //   // Prevent Saturday and Sunday from being selected.
+  //   return day !== 0 && day !== 6;
+  // };
+
+  // Datepicker with min & max validation
+  minDate: Date;
+  maxDate: Date;
+
+  // Datepicker with custom formats
+  date = new FormControl(moment());
 
   foods: Especialista[] = [
     { id: '1', name: 'doutor 1 especialista', especialidade: 'CARDIOLOGISTA', dataDisponivel: '29/09/2023', horarioDisponivel: '16:00:00', status: 'DISPONIVEL' },
@@ -30,6 +45,4 @@ export class PacientesFormComponent {
   ];
 
   selectedFood = this.foods[2].id;
-
-
 }
