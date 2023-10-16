@@ -4,7 +4,7 @@
       <span>Consulta</span>
     </mat-toolbar>
 
-    <form>
+    <form [formGroup]="pacientesForm">
       <!-- Form field do angular material -->
       <mat-form-field class="full-width">
         <mat-label>Nome</mat-label>
@@ -38,31 +38,29 @@
         </mat-select>
       </mat-form-field>
 
-      <!-- Datepicker touch UI -->
-      <!-- alem de importar o MatDatepickerModule e necessario importar MatNativeDateModule ou 
-        MatMomentDateModule so lucao do erro no proprio OVERVIEW do DATEPICKER-->
-      <!-- Datepicker with custom formats -->
-      <!-- Datepicker with filter validation -->
-      <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>Selecione uma data disponível:</mat-label>
-        <input matInput [matDatepickerFilter]="myFilter" [matDatepicker]="picker" [formControl]="date">
-        <mat-hint>DD/MM/YYYY</mat-hint>
-        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker touchUi #picker></mat-datepicker>
-      </mat-form-field>
-
       <!-- Basic select -->
       <mat-form-field appearance="fill">
         <mat-label>Selecione um especialista:</mat-label>
-        <mat-select [(value)]="selectedFood" [(ngModel)]="selectedFood" name="especialista"
-          (ngModelChange)="dataDisponivel()">
-          <mat-option></mat-option>
-          <mat-option [value]="option.id" *ngFor="let option of foods">{{ option.name }}
+        <mat-select formControlName="especialista" (selectionChange)="dataDisponivel()">
+          <mat-option [value]="option" *ngFor="let option of especialistas">{{ option.name }}
           </mat-option>
         </mat-select>
       </mat-form-field>
-      <p>You selected: {{selectedFood}}</p>
     </form>
+
+    <!-- Datepicker touch UI -->
+    <!-- alem de importar o MatDatepickerModule e necessario importar MatNativeDateModule ou 
+        MatMomentDateModule so lucao do erro no proprio OVERVIEW do DATEPICKER-->
+    <!-- Datepicker with custom formats -->
+    <!-- Datepicker with filter validation -->
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Selecione uma data disponível:</mat-label>
+      <input matInput [matDatepickerFilter]="myFilter" [matDatepicker]="picker" [formControl]="date">
+      <!-- <mat-hint></mat-hint> -->
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker touchUi #picker></mat-datepicker>
+    </mat-form-field>
+
   </mat-card-content>
 
   <mat-card-actions>
